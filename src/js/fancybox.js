@@ -16,6 +16,12 @@ const fancyBoxInit = (img) => {
 }
 
 export default () => {
-  document.querySelectorAll('.article-entry img').forEach(fancyBoxInit)
-  document.querySelectorAll('.about-body container img').forEach(fancyBoxInit)
+  document
+    .querySelectorAll(".article-entry img:not([alt^='-']):not([alt^='!'])")
+    .forEach(fancyBoxInit)
+  document
+    .querySelectorAll(
+      ".about-body container img:not([alt^='-']):not([alt^='!'])"
+    )
+    .forEach(fancyBoxInit)
 }
